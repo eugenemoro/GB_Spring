@@ -14,7 +14,6 @@ public class IdeinitApplication {
 	}
 
 	@RequestMapping("/**")
-
 	public String helloWorld() {
 		return "Hello world!";
 	}
