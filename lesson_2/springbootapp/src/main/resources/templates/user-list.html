@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+        .even {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+
+<table border="1" width="100%" cellpadding="10" cellspacing="10" style="border-collapse: collapse;">
+    <tr>
+        <th>№</th>
+        <th>Login</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>E-mail</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr th:each ="user,iter : ${users}" th:class="${iter.even ? 'even' : 'odd'}">
+        <td width="50" align="center" nowrap="nowrap" th:utext="${iter.index +1} + '.'">...</td>
+        <td width="33%" th:utext="${user.login}">...</td>
+        <td width="33%" th:utext="${user.firstName}">...</td>
+        <td width="33%" th:utext="${user.lastName}">...</td>
+        <td width="33%" th:utext="${user.email}">...</td>
+        <td width="50" nowrap="nowrap" align="center">
+            <a th:href="@{'/user-edit?id=' + ${user.id}}">EDIT</a>
+        </td>
+        <td width="50" nowrap="nowrap" align="center">
+            <a th:href="@{'/user-remove?id=' + ${user.id}}">REMOVE</a>
+        </td>
+    </tr>
+</table>
+
+<br />
+
+<form method="get" action="/user-create" >
+    <button style="font-size: 2em;" type="submit">CREATE</button>
+</form>
+
+</body>
+</html>
