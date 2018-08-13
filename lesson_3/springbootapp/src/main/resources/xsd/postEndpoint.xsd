@@ -1,0 +1,110 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xl="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://emorozov.ru/springbootapp/soap/post"
+           targetNamespace="http://emorozov.ru/springbootapp/soap/post"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="postRecord">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="user" type="xs:string"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="content" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultRecord">
+        <xs:sequence>
+            <xl:element name="success" type="xs:boolean"/>
+            <xl:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="postRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xl:element name="success" type="xs:boolean"/>
+                <xl:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pingRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xl:element name="success" type="xs:boolean"/>
+                <xl:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createPostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+                <xs:element name="user" type="xs:string"/>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="content" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createPostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xl:element name="success" type="xs:boolean"/>
+                <xl:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="removePostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="removePostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xl:element name="success" type="xs:boolean"/>
+                <xl:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPostsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPostsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rows" type="tns:postRecord" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

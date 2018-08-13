@@ -1,8 +1,6 @@
 package ru.emorozov.springbootapp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "User")
@@ -11,10 +9,10 @@ public class User extends AbstractEntity {
 	@Column(name = "login")
 	private String login;
 
-	@Column(name = "firstName")
+	@Column(name = "first_name")
 	private String firstName;
 
-	@Column(name = "lastName")
+	@Column(name = "last_name")
 	private String lastName;
 
 	@Column(name = "email")
