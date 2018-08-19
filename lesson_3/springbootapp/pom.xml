@@ -10,6 +10,7 @@
         <module>app-server-config</module>
         <module>app-spring-boot</module>
         <module>app-eureka-server</module>
+        <module>app-spring-integration</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -71,10 +72,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
-        <!--</dependency>-->
     </dependencies>
 
 </project>
