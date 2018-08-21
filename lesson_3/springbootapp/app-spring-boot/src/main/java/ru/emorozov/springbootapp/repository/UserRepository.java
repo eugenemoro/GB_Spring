@@ -8,4 +8,5 @@ import ru.emorozov.springbootapp.entity.User;
 @Repository
 @Transactional
 public interface UserRepository extends JpaRepository<User, String> {
+	User findByFirstName(String name);
 }

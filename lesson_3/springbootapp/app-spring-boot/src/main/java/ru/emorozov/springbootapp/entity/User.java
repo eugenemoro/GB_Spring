@@ -1,7 +1,10 @@
 package ru.emorozov.springbootapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "User")
 public class User extends AbstractEntity {
